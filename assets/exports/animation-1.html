@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_17 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_17" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_17');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  
+(function() {
+  const container = document.getElementById('threejs-container-NEXUS_UNIFIED_PLANET');
+  if (!container) return;
+  
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
+
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  // Lights for Subtle Depth
+  const ambientLight = new THREE.AmbientLight(0x0a0a20, 0.4);
+  scene.add(ambientLight);
+
+  const coreLight = new THREE.PointLight(0x3B82F6, 12, 50);
+  coreLight.position.set(0, 0, 0);
+  scene.add(coreLight);
+
+  const softAccent = new THREE.SpotLight(0x8B5CF6, 8);
+  softAccent.position.set(20, 20, 15);
+  scene.add(softAccent);
+
+  // Unified Nexus Core - Sophisticated & Fluid
+  const nexusGroup = new THREE.Group();
+  scene.add(nexusGroup);
+
+  // Internal Energy Core (Softer Glow)
+  const innerGeom = new THREE.SphereGeometry(1.2, 64, 64);
+  const innerMat = new THREE.MeshPhongMaterial({
+    color: 0x3B82F6,
+    emissive: 0x3B82F6,
+    emissiveIntensity: 0.8,
+    transparent: true,
+    opacity: 0.25,
+    shininess: 100
+  });
+  const innerCore = new THREE.Mesh(innerGeom, innerMat);
+  nexusGroup.add(innerCore);
+
+  // ADDING THE "ELEMENT TO THE PLANET" (SCREEN_16 Neural Lattice)
+  // Integrating the neural lattice as a ghost-like overlay around the core
+  const latticeGeom = new THREE.IcosahedronGeometry(2.5, 3);
+  const latticeMat = new THREE.MeshPhongMaterial({
+    color: 0x8B5CF6,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.15,
+    emissive: 0x8B5CF6,
+    emissiveIntensity: 0.3
+  });
+  const neuralOverlay = new THREE.Mesh(latticeGeom, latticeMat);
+  nexusGroup.add(neuralOverlay);
+
+  // Crystalline Nodes (from lattice)
+  const pointsGeom = new THREE.IcosahedronGeometry(2.5, 3);
+  const pointsMat = new THREE.PointsMaterial({
+    color: 0x22D3EE,
+    size: 0.04,
+    transparent: true,
+    opacity: 0.3
+  });
+  const points = new THREE.Points(pointsGeom, pointsMat);
+  nexusGroup.add(points);
+
+  // Drifting Architectural Fragments
+  const fragGeom = new THREE.BoxGeometry(0.12, 0.12, 0.12);
+  const fragMat = new THREE.MeshPhongMaterial({ 
+    color: 0x22D3EE, 
+    transparent: true, 
+    opacity: 0.35,
+    shininess: 80
+  });
+
+  const fragments = [];
+  for(let i = 0; i < 40; i++) {
+    const frag = new THREE.Mesh(fragGeom, fragMat);
+    const radius = 7 + Math.random() * 7;
+    const angle = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    
+    frag.position.set(
+      radius * Math.sin(phi) * Math.cos(angle),
+      radius * Math.sin(phi) * Math.sin(angle),
+      radius * Math.cos(phi)
+    );
+    
+    frag.userData = { 
+      speed: 0.0004 + Math.random() * 0.001,
+      axis: new THREE.Vector3(Math.random(), Math.random(), Math.random()).normalize(),
+      orbitSpeed: 0.0008 + Math.random() * 0.0015
+    };
+    nexusGroup.add(frag);
+    fragments.push(frag);
+  }
+
+  // Atmospheric Particle Drift
+  const particleCount = 500;
+  const particlesGeom = new THREE.BufferGeometry();
+  const posArray = new Float32Array(particleCount * 3);
+  for(let i = 0; i < particleCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 45;
+  }
+  particlesGeom.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+  const particlesMat = new THREE.PointsMaterial({
+    color: 0x8B5CF6,
+    size: 0.012,
+    transparent: true,
+    opacity: 0.2,
+    blending: THREE.AdditiveBlending
+  });
+  const starField = new THREE.Points(particlesGeom, particlesMat);
+  scene.add(starField);
+
+  camera.position.z = 20;
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let targetX = 0;
+  let targetY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth) - 0.5;
+    mouseY = (e.clientY / window.innerHeight) - 0.5;
+  });
+
+  const animate = () => {
+    requestAnimationFrame(animate);
+    
+    targetX += (mouseX * 0.1 - targetX) * 0.03;
+    targetY += (mouseY * 0.1 - targetY) * 0.03;
+
+    nexusGroup.rotation.y += 0.0006;
+    nexusGroup.rotation.x += targetY;
+    nexusGroup.rotation.y += targetX;
+
+    neuralOverlay.rotation.y -= 0.0003;
+    points.rotation.y -= 0.0003;
+
+    innerCore.scale.setScalar(1 + Math.sin(Date.now() * 0.0008) * 0.02);
+
+    fragments.forEach(frag => {
+      frag.rotateOnAxis(frag.userData.axis, frag.userData.speed);
+      frag.position.applyAxisAngle(new THREE.Vector3(0, 1, 0), frag.userData.orbitSpeed);
+    });
+
+    starField.rotation.y += 0.00008;
+    starField.position.y += Math.sin(Date.now() * 0.0003) * 0.0005;
+
+    renderer.render(scene, camera);
+  };
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+})();
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_17 -->
+</body>
+</html>

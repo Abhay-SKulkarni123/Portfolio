@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abhay S Kulkarni - Project Nexus</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400&amp;family=JetBrains+Mono:wght@500&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from system prompt -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#8c909f",
+                      "secondary-container": "#571bc1",
+                      "outline-variant": "#424754",
+                      "primary-fixed-dim": "#adc6ff",
+                      "on-primary-container": "#00285d",
+                      "surface-container-low": "#1c1b1b",
+                      "secondary": "#d0bcff",
+                      "surface-variant": "#353534",
+                      "deep-indigo": "#1E1B4B",
+                      "on-primary-fixed": "#001a42",
+                      "on-primary-fixed-variant": "#004395",
+                      "nebula-purple": "#7C3AED",
+                      "tertiary-fixed": "#ffd6fd",
+                      "on-error-container": "#ffdad6",
+                      "surface-dim": "#131313",
+                      "surface-container-high": "#2a2a2a",
+                      "surface-bright": "#3a3939",
+                      "background": "#131313",
+                      "on-background": "#e5e2e1",
+                      "tertiary-fixed-dim": "#fbabff",
+                      "tertiary": "#fbabff",
+                      "tertiary-container": "#e14ef6",
+                      "secondary-fixed": "#e9ddff",
+                      "primary-fixed": "#d8e2ff",
+                      "on-error": "#690005",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#23005c",
+                      "primary-container": "#4d8eff",
+                      "error-container": "#93000a",
+                      "inverse-surface": "#e5e2e1",
+                      "on-surface-variant": "#c2c6d6",
+                      "on-surface": "#e5e2e1",
+                      "inverse-on-surface": "#313030",
+                      "on-tertiary-fixed": "#36003e",
+                      "on-tertiary-fixed-variant": "#7c008e",
+                      "inverse-primary": "#005ac2",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "surface-container-lowest": "#0e0e0e",
+                      "space-navy": "#0A0E1A",
+                      "surface": "#131313",
+                      "on-primary": "#002e6a",
+                      "primary": "#adc6ff",
+                      "on-tertiary-container": "#4d0059",
+                      "electric-cyan": "#22D3EE",
+                      "on-secondary-container": "#c4abff",
+                      "surface-container-highest": "#353534",
+                      "on-tertiary": "#580065",
+                      "surface-tint": "#adc6ff",
+                      "glass-border": "rgba(255, 255, 255, 0.12)",
+                      "on-secondary-fixed-variant": "#5516be",
+                      "surface-container": "#201f1f",
+                      "on-secondary": "#3c0091"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-page": "5vw",
+                      "gutter-grid": "2rem",
+                      "stack-section": "10rem",
+                      "stack-card": "1.5rem"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Montserrat"
+                      ],
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "headline-xl": [
+                              "Montserrat"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "label-code": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "80px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.8",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-code": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #0e0e0e; /* surface-container-lowest equivalent */
+            color: #e5e2e1; /* on-surface equivalent */
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(10, 14, 26, 0.6); /* space-navy tinted */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Interactive Depth Utilities */
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px) translateZ(20px);
+            box-shadow: 0 30px 60px -12px rgba(34, 211, 238, 0.15), 0 18px 36px -18px rgba(34, 211, 238, 0.1); /* electric-cyan ambient shadow */
+        }
+
+        /* Ambient Glows */
+        .ambient-glow-cyan {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, rgba(34, 211, 238, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .ambient-glow-magenta {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(225, 78, 246, 0.05) 0%, rgba(225, 78, 246, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Button Bloom */
+        .btn-primary {
+            background: linear-gradient(135deg, #005ac2 0%, #7C3AED 100%); /* inverse-primary to nebula-purple */
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 30px rgba(34, 211, 238, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0e0e; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353534; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #424754; 
+        }
+
+        /* 3D Container Reset */
+        .scene-container {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none; /* Let clicks pass through to UI */
+        }
+        
+        .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Stagger Animation */
+        @keyframes heroFadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .hero-stagger > * {
+            opacity: 0;
+            animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .hero-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-stagger > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-stagger > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero-stagger > *:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="antialiased selection:bg-electric-cyan selection:text-space-navy relative min-h-screen">
+<!-- Atmospheric Background Layers -->
+<div class="fixed inset-0 z-[-2] bg-gradient-to-b from-space-navy via-deep-indigo/20 to-surface-container-lowest"></div>
+<!-- WebGL 3D Scene Container (Energy Core) -->
+<div class="scene-container h-screen w-full">
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-NEXUS_UNIFIED_PLANET" style="width:100%;height:100%"></div>
+<script>
+
+(function() {
+  const container = document.getElementById('threejs-container-NEXUS_UNIFIED_PLANET');
+  if (!container) return;
+  
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
+
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  // Lights for Subtle Depth
+  const ambientLight = new THREE.AmbientLight(0x0a0a20, 0.4);
+  scene.add(ambientLight);
+
+  const coreLight = new THREE.PointLight(0x3B82F6, 12, 50);
+  coreLight.position.set(0, 0, 0);
+  scene.add(coreLight);
+
+  const softAccent = new THREE.SpotLight(0x8B5CF6, 8);
+  softAccent.position.set(20, 20, 15);
+  scene.add(softAccent);
+
+  // Unified Nexus Core - Sophisticated & Fluid
+  const nexusGroup = new THREE.Group();
+  scene.add(nexusGroup);
+
+  // Internal Energy Core (Softer Glow)
+  const innerGeom = new THREE.SphereGeometry(1.2, 64, 64);
+  const innerMat = new THREE.MeshPhongMaterial({
+    color: 0x3B82F6,
+    emissive: 0x3B82F6,
+    emissiveIntensity: 0.8,
+    transparent: true,
+    opacity: 0.25,
+    shininess: 100
+  });
+  const innerCore = new THREE.Mesh(innerGeom, innerMat);
+  nexusGroup.add(innerCore);
+
+  // ADDING THE "ELEMENT TO THE PLANET" (SCREEN_16 Neural Lattice)
+  // Integrating the neural lattice as a ghost-like overlay around the core
+  const latticeGeom = new THREE.IcosahedronGeometry(2.5, 3);
+  const latticeMat = new THREE.MeshPhongMaterial({
+    color: 0x8B5CF6,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.15,
+    emissive: 0x8B5CF6,
+    emissiveIntensity: 0.3
+  });
+  const neuralOverlay = new THREE.Mesh(latticeGeom, latticeMat);
+  nexusGroup.add(neuralOverlay);
+
+  // Crystalline Nodes (from lattice)
+  const pointsGeom = new THREE.IcosahedronGeometry(2.5, 3);
+  const pointsMat = new THREE.PointsMaterial({
+    color: 0x22D3EE,
+    size: 0.04,
+    transparent: true,
+    opacity: 0.3
+  });
+  const points = new THREE.Points(pointsGeom, pointsMat);
+  nexusGroup.add(points);
+
+  // Drifting Architectural Fragments
+  const fragGeom = new THREE.BoxGeometry(0.12, 0.12, 0.12);
+  const fragMat = new THREE.MeshPhongMaterial({ 
+    color: 0x22D3EE, 
+    transparent: true, 
+    opacity: 0.35,
+    shininess: 80
+  });
+
+  const fragments = [];
+  for(let i = 0; i < 40; i++) {
+    const frag = new THREE.Mesh(fragGeom, fragMat);
+    const radius = 7 + Math.random() * 7;
+    const angle = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    
+    frag.position.set(
+      radius * Math.sin(phi) * Math.cos(angle),
+      radius * Math.sin(phi) * Math.sin(angle),
+      radius * Math.cos(phi)
+    );
+    
+    frag.userData = { 
+      speed: 0.0004 + Math.random() * 0.001,
+      axis: new THREE.Vector3(Math.random(), Math.random(), Math.random()).normalize(),
+      orbitSpeed: 0.0008 + Math.random() * 0.0015
+    };
+    nexusGroup.add(frag);
+    fragments.push(frag);
+  }
+
+  // Atmospheric Particle Drift
+  const particleCount = 500;
+  const particlesGeom = new THREE.BufferGeometry();
+  const posArray = new Float32Array(particleCount * 3);
+  for(let i = 0; i < particleCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 45;
+  }
+  particlesGeom.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+  const particlesMat = new THREE.PointsMaterial({
+    color: 0x8B5CF6,
+    size: 0.012,
+    transparent: true,
+    opacity: 0.2,
+    blending: THREE.AdditiveBlending
+  });
+  const starField = new THREE.Points(particlesGeom, particlesMat);
+  scene.add(starField);
+
+  camera.position.z = 20;
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let targetX = 0;
+  let targetY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth) - 0.5;
+    mouseY = (e.clientY / window.innerHeight) - 0.5;
+  });
+
+  const animate = () => {
+    requestAnimationFrame(animate);
+    
+    targetX += (mouseX * 0.1 - targetX) * 0.03;
+    targetY += (mouseY * 0.1 - targetY) * 0.03;
+
+    nexusGroup.rotation.y += 0.0006;
+    nexusGroup.rotation.x += targetY;
+    nexusGroup.rotation.y += targetX;
+
+    neuralOverlay.rotation.y -= 0.0003;
+    points.rotation.y -= 0.0003;
+
+    innerCore.scale.setScalar(1 + Math.sin(Date.now() * 0.0008) * 0.02);
+
+    fragments.forEach(frag => {
+      frag.rotateOnAxis(frag.userData.axis, frag.userData.speed);
+      frag.position.applyAxisAngle(new THREE.Vector3(0, 1, 0), frag.userData.orbitSpeed);
+    });
+
+    starField.rotation.y += 0.00008;
+    starField.position.y += Math.sin(Date.now() * 0.0003) * 0.0005;
+
+    renderer.render(scene, camera);
+  };
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+})();
+
+</script>
+</div>
+</div>
+<!-- ==========================================
+         TOP NAV BAR (Shared Component)
+         ========================================== -->
+<nav class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-md border-b border-glass-border shadow-md shadow-primary/20 transition-all duration-500 ease-out">
+<div class="flex justify-between items-center px-margin-page py-6 w-full max-w-[1920px] mx-auto">
+<!-- Brand -->
+<a class="font-headline-md text-headline-md font-extrabold tracking-tighter text-on-surface hover:text-electric-cyan transition-colors duration-300" href="#">
+                Abhay S Kulkarni
+            </a>
+<!-- Desktop Links -->
+<ul class="hidden md:flex gap-8 items-center">
+<li><a class="font-headline-md text-headline-md font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 hover:scale-105 hover:bg-surface-variant/20 px-4 py-2 rounded-lg" href="#experience">Experience</a></li>
+<li><a class="font-headline-md text-headline-md font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 hover:scale-105 hover:bg-surface-variant/20 px-4 py-2 rounded-lg" href="#projects">Projects</a></li>
+<li><a class="font-headline-md text-headline-md font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 hover:scale-105 hover:bg-surface-variant/20 px-4 py-2 rounded-lg" href="#skills">Skills</a></li>
+<li><a class="font-headline-md text-headline-md font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 hover:scale-105 hover:bg-surface-variant/20 px-4 py-2 rounded-lg" href="#contact">Contact</a></li>
+</ul>
+<!-- Trailing Action -->
+<a class="hidden md:inline-flex items-center justify-center font-label-caps text-label-caps text-primary border border-primary px-6 py-2 rounded-full hover:bg-primary/10 transition-colors duration-300" href="#contact">
+                Connect
+            </a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- ==========================================
+         HERO SECTION (Project Nexus)
+         ========================================== -->
+<main class="content-layer pt-32">
+<section class="min-h-screen flex flex-col justify-center items-start px-margin-page max-w-[1920px] mx-auto relative reveal" id="hero">
+<div class="glass-panel p-12 md:p-20 rounded-3xl w-full hover-lift border-l-4 border-l-electric-cyan relative overflow-hidden group max-w-[1920px] py-stack-section">
+<!-- Subtle background overlay image -->
+<div class="absolute inset-0 bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuCsGb0D-bR2r08O6eqXO5Dt0xZnx9fdu6870YMX-UTSQjmRnCaY9fuMq8sxJA2TFHfs9Dk5EVkDk8vOZYv0kWEqi0tt3TICZLiT4x1CI58qwlq0xfBYQ_8xPcDw1WPozXAm_QGXxMxP3nKh9zLINkDn4zL-Z2h0m3uQx0tPBiqh2iHwCrA64UKWmgPGWr5U0okJm6cpyijPgkg_EfSu8vxSZbNR14IcqqyicRP2RVOSJnKQntNjbMTG4A')] bg-cover bg-center opacity-10 mix-blend-screen pointer-events-none z-0"></div>
+<!-- Subtle internal glow -->
+<div class="absolute inset-0 bg-gradient-to-br from-electric-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0"></div>
+<div class="relative z-10 flex flex-col gap-6 hero-stagger">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-tertiary-container/30 bg-tertiary-container/10 w-fit">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim">Software Engineer</span>
+</div>
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl tracking-tighter pb-2 text-transparent bg-clip-text bg-gradient-to-br from-white via-primary to-tertiary-container drop-shadow-2xl">
+                        Abhay S Kulkarni
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
+                        Building scalable software and intelligent AI-powered products.
+                    </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+<div class="flex flex-col gap-4">
+<h3 class="font-label-caps text-label-caps text-electric-cyan tracking-widest">Core Expertise</h3>
+<ul class="flex flex-col gap-3">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-electric-cyan text-body-md">hub</span>
+<span class="font-body-md text-body-md">Distributed Systems</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-electric-cyan text-body-md">cloud_done</span>
+<span class="font-body-md text-body-md">Cloud Native Architecture</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-electric-cyan text-body-md">psychology</span>
+<span class="font-body-md text-body-md">AI Integration</span>
+</li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-label-caps text-label-caps text-tertiary-container tracking-widest">Mission Statement</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Dedicated to architecting resilient digital ecosystems that bridge the gap between complex backend engineering and immersive frontend storytelling.
+        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+<span class="font-label-caps text-label-caps text-on-surface-variant text-[10px]">Scroll</span>
+<span class="material-symbols-outlined animate-bounce text-on-surface-variant">keyboard_arrow_down</span>
+</div>
+</section>
+<!-- ==========================================
+             ABOUT / PHILOSOPHY SECTION
+             ========================================== -->
+<section class="py-stack-section px-margin-page max-w-[1920px] mx-auto relative z-10 reveal" id="about">
+<div class="ambient-glow-cyan top-0 left-0 translate-x-[-20%] translate-y-[-20%]"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid">
+<!-- Section Header -->
+<div class="md:col-span-4 flex flex-col gap-4">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Architecture <br/><span class="text-on-surface">&amp; Philosophy</span></h2>
+<div class="h-1 w-24 bg-gradient-to-r from-electric-cyan to-transparent rounded-full mt-2"></div>
+</div>
+<!-- Bento Grid Content -->
+<div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-stack-card">
+<!-- Card 1 -->
+<div class="glass-panel p-8 rounded-xl hover-lift flex flex-col gap-4 h-full">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high border border-glass-border flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Engineering Philosophy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Robust systems require elegant foundations. I prioritize clean, maintainable code structures that scale effortlessly while remaining intelligible to future developers.
+                        </p>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-8 rounded-xl hover-lift flex flex-col gap-4 h-full bg-gradient-to-br from-space-navy to-surface-container-high">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high border border-glass-border flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">neurology</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Current Interests</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Exploring the intersection of Distributed Systems and applied Artificial Intelligence to create context-aware, autonomous digital environments.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+             PROJECTS SECTION
+             ========================================== -->
+<section class="py-stack-section px-margin-page max-w-[1920px] mx-auto relative z-10 reveal" id="projects">
+<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-4 items-center text-center">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Projects</h2>
+<div class="h-1 w-24 bg-gradient-to-r from-electric-cyan via-tertiary-container to-transparent rounded-full mt-2"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 (Floating Artifact Style) -->
+<div class="glass-panel rounded-2xl p-6 hover-lift border border-electric-cyan/20 bg-gradient-to-br from-surface-container/50 to-space-navy/50 relative overflow-hidden group">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-electric-cyan/10 rounded-full blur-2xl group-hover:bg-electric-cyan/20 transition-all"></div>
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div class="p-3 bg-surface-container-high rounded-lg border border-glass-border">
+<span class="material-symbols-outlined text-electric-cyan">language</span>
+</div>
+<div class="flex gap-2">
+<a class="text-on-surface-variant hover:text-electric-cyan transition-colors" href="#"><span class="material-symbols-outlined">open_in_new</span></a>
+<a class="text-on-surface-variant hover:text-electric-cyan transition-colors" href="#"><span class="material-symbols-outlined">code</span></a>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 relative z-10">Nexus Platform</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 relative z-10">A distributed microservices architecture for real-time data processing and visualization.</p>
+<div class="flex flex-wrap gap-2 relative z-10">
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-electric-cyan border border-glass-border">Go</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-electric-cyan border border-glass-border">Kubernetes</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="glass-panel rounded-2xl p-6 hover-lift border border-tertiary-container/20 bg-gradient-to-br from-surface-container/50 to-space-navy/50 relative overflow-hidden group">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-tertiary-container/10 rounded-full blur-2xl group-hover:bg-tertiary-container/20 transition-all"></div>
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div class="p-3 bg-surface-container-high rounded-lg border border-glass-border">
+<span class="material-symbols-outlined text-tertiary-container">model_training</span>
+</div>
+<div class="flex gap-2">
+<a class="text-on-surface-variant hover:text-tertiary-container transition-colors" href="#"><span class="material-symbols-outlined">code</span></a>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 relative z-10">Cognitive Agent</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 relative z-10">An LLM-powered autonomous agent for code refactoring and automated test generation.</p>
+<div class="flex flex-wrap gap-2 relative z-10">
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-tertiary-container border border-glass-border">Python</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-tertiary-container border border-glass-border">PyTorch</span>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="glass-panel rounded-2xl p-6 hover-lift border border-primary/20 bg-gradient-to-br from-surface-container/50 to-space-navy/50 relative overflow-hidden group">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all"></div>
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div class="p-3 bg-surface-container-high rounded-lg border border-glass-border">
+<span class="material-symbols-outlined text-primary">data_object</span>
+</div>
+<div class="flex gap-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">code</span></a>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 relative z-10">Neural DB</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 relative z-10">Experimental vector database optimized for extremely high-dimensional embeddings.</p>
+<div class="flex flex-wrap gap-2 relative z-10">
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-primary border border-glass-border">Rust</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-primary border border-glass-border">C++</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+             SKILLS SECTION (Network Nodes)
+             ========================================== -->
+<section class="py-stack-section px-margin-page max-w-[1920px] mx-auto relative z-10 reveal" id="skills">
+<div class="ambient-glow-magenta bottom-0 right-0 translate-x-[20%] translate-y-[20%]"></div>
+<div class="flex flex-col gap-12 items-center">
+<div class="flex flex-col gap-4 items-center text-center">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Skills Arsenal</h2>
+<div class="h-1 w-24 bg-gradient-to-r from-tertiary-container to-transparent rounded-full mt-2"></div>
+</div>
+<div class="flex flex-wrap justify-center gap-6 max-w-4xl relative">
+<!-- Network Connections (Decorative SVG background) -->
+<svg class="absolute inset-0 w-full h-full z-0 opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#22D3EE" stroke-width="1" x1="20%" x2="80%" y1="20%" y2="80%"></line>
+<line stroke="#e14ef6" stroke-width="1" x1="80%" x2="20%" y1="20%" y2="80%"></line>
+<line stroke="#adc6ff" stroke-width="1" x1="50%" x2="50%" y1="10%" y2="90%"></line>
+</svg>
+<!-- Skill Nodes -->
+<div class="glass-panel p-4 rounded-full border border-electric-cyan/30 flex items-center gap-3 hover-lift z-10 relative bg-surface-container/80">
+<div class="w-2 h-2 rounded-full bg-electric-cyan shadow-[0_0_10px_#22D3EE]"></div>
+<span class="font-label-code text-label-code text-on-surface">Python</span>
+</div>
+<div class="glass-panel p-4 rounded-full border border-tertiary-container/30 flex items-center gap-3 hover-lift z-10 relative bg-surface-container/80">
+<div class="w-2 h-2 rounded-full bg-tertiary-container shadow-[0_0_10px_#e14ef6]"></div>
+<span class="font-label-code text-label-code text-on-surface">Distributed Systems</span>
+</div>
+<div class="glass-panel p-4 rounded-full border border-primary/30 flex items-center gap-3 hover-lift z-10 relative bg-surface-container/80">
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_#adc6ff]"></div>
+<span class="font-label-code text-label-code text-on-surface">Go</span>
+</div>
+<div class="glass-panel p-4 rounded-full border border-electric-cyan/30 flex items-center gap-3 hover-lift z-10 relative bg-surface-container/80">
+<div class="w-2 h-2 rounded-full bg-electric-cyan shadow-[0_0_10px_#22D3EE]"></div>
+<span class="font-label-code text-label-code text-on-surface">Kubernetes</span>
+</div>
+<div class="glass-panel p-4 rounded-full border border-tertiary-container/30 flex items-center gap-3 hover-lift z-10 relative bg-surface-container/80">
+<div class="w-2 h-2 rounded-full bg-tertiary-container shadow-[0_0_10px_#e14ef6]"></div>
+<span class="font-label-code text-label-code text-on-surface">PyTorch</span>
+</div>
+<div class="glass-panel p-4 rounded-full border border-primary/30 flex items-center gap-3 hover-lift z-10 relative bg-surface-container/80">
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_#adc6ff]"></div>
+<span class="font-label-code text-label-code text-on-surface">React / TypeScript</span>
+</div>
+<div class="glass-panel p-4 rounded-full border border-electric-cyan/30 flex items-center gap-3 hover-lift z-10 relative bg-surface-container/80">
+<div class="w-2 h-2 rounded-full bg-electric-cyan shadow-[0_0_10px_#22D3EE]"></div>
+<span class="font-label-code text-label-code text-on-surface">Docker</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+             EXPERIENCE / TIMELINE SECTION
+             ========================================== -->
+<section class="py-stack-section px-margin-page max-w-[1920px] mx-auto relative z-10 reveal" id="experience">
+<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-4 items-start">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Experience <br/><span class="text-tertiary-container">Timeline</span></h2>
+<div class="h-1 w-24 bg-gradient-to-r from-tertiary-container to-transparent rounded-full mt-2"></div>
+</div>
+<div class="relative border-l-2 border-surface-variant ml-4 md:ml-8 pl-8 md:pl-12 flex flex-col gap-12">
+<!-- Timeline Item 1 -->
+<div class="relative">
+<div class="absolute -left-[41px] md:-left-[57px] top-1 w-6 h-6 rounded-full bg-surface border-4 border-electric-cyan z-10 shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
+<div class="glass-panel p-6 md:p-8 rounded-xl hover-lift border-l-2 border-l-electric-cyan">
+<span class="font-label-caps text-label-caps text-electric-cyan mb-2 block">2022 - Present</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Senior Software Engineer</h3>
+<h4 class="font-body-lg text-body-lg text-on-surface-variant mb-4">Tech Innovators Inc.</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Led the architecture and development of a scalable microservices platform handling millions of daily requests. Mentored junior engineers and established best practices for CI/CD pipelines.</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative">
+<div class="absolute -left-[41px] md:-left-[57px] top-1 w-6 h-6 rounded-full bg-surface border-4 border-tertiary-container z-10"></div>
+<div class="glass-panel p-6 md:p-8 rounded-xl hover-lift border-l-2 border-l-tertiary-container">
+<span class="font-label-caps text-label-caps text-tertiary-container mb-2 block">2020 - 2022</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Software Engineer</h3>
+<h4 class="font-body-lg text-body-lg text-on-surface-variant mb-4">Data Systems LLC</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Developed robust backend APIs and optimized database queries to reduce load times by 40%. Collaborated with cross-functional teams to deliver features on tight deadlines.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+             CONTACT SECTION
+             ========================================== -->
+<section class="py-stack-section px-margin-page max-w-[1920px] mx-auto relative z-10 reveal" id="contact">
+<div class="glass-panel p-12 md:p-20 rounded-3xl text-center flex flex-col items-center gap-8 relative overflow-hidden bg-gradient-to-b from-surface/50 to-space-navy/80 border border-primary/20 shadow-[0_0_50px_rgba(10,14,26,0.8)]">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20"></div>
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface relative z-10">Initiate Protocol</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl relative z-10">Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+<a class="btn-primary font-label-caps text-label-caps text-white px-10 py-5 rounded-full inline-flex items-center gap-3 relative z-10 mt-4" href="mailto:hello@example.com">
+<span class="material-symbols-outlined">mail</span>
+    Transmit Message
+</a>
+</div>
+</section>
+</main>
+<!-- ==========================================
+         FOOTER (Shared Component)
+         ========================================== -->
+<footer class="w-full mt-stack-section border-t border-glass-border bg-gradient-to-t from-deep-indigo/20 to-transparent shadow-[0_-20px_50px_rgba(124,58,237,0.1)] transition-all duration-500 bg-surface relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-page py-12 gap-gutter-grid max-w-[1920px] mx-auto">
+<div class="font-headline-md text-headline-md text-tertiary">
+                Abhay S Kulkarni
+            </div>
+<div class="font-body-md text-body-md font-label-caps text-label-caps text-tertiary">
+                © 2024 Abhay S Kulkarni • Engineered for the Future
+            </div>
+<ul class="flex gap-6">
+<!-- Using exact strings from JSON -->
+<li><a class="font-body-md text-body-md font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary hover:drop-shadow-[0_0_8px_rgba(251,171,255,0.8)] transition-all duration-500" href="#">GitHub</a></li>
+<li><a class="font-body-md text-body-md font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary hover:drop-shadow-[0_0_8px_rgba(251,171,255,0.8)] transition-all duration-500" href="#">LinkedIn</a></li>
+<li><a class="font-body-md text-body-md font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary hover:drop-shadow-[0_0_8px_rgba(251,171,255,0.8)] transition-all duration-500" href="#">Twitter</a></li>
+<li><a class="font-body-md text-body-md font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary hover:drop-shadow-[0_0_8px_rgba(251,171,255,0.8)] transition-all duration-500" href="#">Email</a></li>
+</ul>
+</div>
+</footer>
+<!-- Interactive scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hover lift effect
+            const cards = document.querySelectorAll('.hover-lift');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = ((y - centerY) / centerY) * -5; // Max 5deg tilt
+                    const rotateY = ((x - centerX) / centerX) * 5;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) translateZ(20px)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
+            });
+
+            // Scroll reveal animation
+            const reveals = document.querySelectorAll('.reveal');
+
+            function reveal() {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+
+                reveals.forEach(reveal => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', reveal);
+            reveal(); // Trigger on load
+        });
+    </script>
+</body></html>
