@@ -1,9 +1,7 @@
+import MainLayout from "./layouts/MainLayout";
+
 function App() {
-  return (
-    <div>
-      Portfolio Website
-    </div>
-  );
+  return <MainLayout />;
 }
 
 export default App;
