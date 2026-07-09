@@ -41,3 +41,5 @@
             window.addEventListener('scroll', reveal);
             reveal(); // Trigger on load
         });
+
+        
